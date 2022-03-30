@@ -32,9 +32,9 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body> 
 		<div class="container">
-			<p class="advice">Advice #<span id="id">000</span></p>
+			<p class="advice">ADVICE <i>#</i> <span id="id">000</span></p>
 
 			<p class="quote">
 				"<span id="advice">Toss the dice for a advice!</span>"
@@ -43,8 +43,8 @@
 			<div class="divider"></div>
 
 		</div>
-		<button class="button" onclick="getAdvice()">
-			<img class="dice" src="/images/icon-dice.svg" alt="" />
+		<button class="button" onclick="getAdvice()" role="button">
+			<img class="dice" src="/images/icon-dice.svg" alt="Dice for rolling advice" />
 		</button>
 
 		<div class="attribution">
@@ -69,5 +69,6 @@
 		}).then((res) => res.json());
 		document.getElementById("id").innerText = response.slip.id;
 		document.getElementById("advice").innerText = response.slip.advice;
-	}
+    console.log(response)
+  }
 </script>
