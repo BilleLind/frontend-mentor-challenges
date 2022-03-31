@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [Add solution URL here](https://github.com/billelind/frontend-mentor-challenges/advice-generator/)
--   Live Site URL: [Add live site URL here](https://advice.billelind.com)
+-   Live Site URL: [Add live site URL here](https://billelind.github.io/frontend-mentor-challenges/advice-generator/)
 
 ## My process
 
