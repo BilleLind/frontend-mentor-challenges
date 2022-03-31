@@ -43,8 +43,8 @@
 			<div class="divider"></div>
 
 		</div>
-		<button class="button" onclick="getAdvice()" role="button">
-			<img class="dice" src="/images/icon-dice.svg" alt="Dice for rolling advice" />
+		<button class="button" role="button">
+			<img class="dice" src="./images/icon-dice.svg" alt="Dice for rolling advice" />
 		</button>
 
 		<div class="attribution">
@@ -61,14 +61,6 @@
 	</body>
 </html>
 
-<script>
-	async function getAdvice() {
-		const response = await fetch("https://api.adviceslip.com/advice", {
-			method: "GET",
-			mode: "cors",
-		}).then((res) => res.json());
-		document.getElementById("id").innerText = response.slip.id;
-		document.getElementById("advice").innerText = response.slip.advice;
-    console.log(response)
-  }
+<script src="./js/index.js" defer type="module">
+	
 </script>
