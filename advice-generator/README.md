@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://github.com/billelind/frontend-mentor-challenges/advice-generator/)
--   Live Site URL: [Add live site URL here](https://billelind.github.io/frontend-mentor-challenges/advice-generator/)
+-   Solution URL: [Advice Generator](https://github.com/billelind/frontend-mentor-challenges/advice-generator/)
+-   Live Site URL: [Github Pages](https://billelind.github.io/frontend-mentor-challenges/advice-generator/)
 
 ## My process
 
