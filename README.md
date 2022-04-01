@@ -4,4 +4,5 @@ The folders inside each contain their own solution and readme
 
 ## Completed Challenges
 
-- Advice Generator 
+- [Advice Generator](https://billelind.github.io/frontend-mentor-challenges/advice-generator/) 
+    - HTML | CSS | Javascript
