@@ -1,10 +1,47 @@
-import { IconCart, IconClose, IconMenu } from './SVG'
-import { Dispatch, SetStateAction } from 'react'
-type Dispatcher<S> = Dispatch<SetStateAction<S>>
+import { IconCart, IconClose, IconLogo, IconMenu } from './SVG'
 
 export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => {
 	return (
-		<header className="flex justify-between items-center relative border-b border-lightGrayishBlue">
+		<header className="flex justify-between items-center relative border-b border-lightGrayishBlue text-lg">
+			<nav className="flex items-center justify-center p-2 gap-x-2">
+				<IconMenu onClick={openMenu} className=" md:hidden" />
+				<div className={`${open ? 'absolute top-0 left-0 w-full h-full bg-black/75' : 'hidden'}`}>
+					<div className="bg-white p-2 w-3/5 flex flex-col">
+					<button onClick={openMenu} /* className={`${open ? 'inline-flex p-4 border-red-400 ' : 'hidden'}`} */>
+								<IconClose />
+							</button>
+						<a href="#" /* className={`${open ? '' :'ml-4 '} text-darkGrayishBlue  hover:text-black p-4 hover:border-b-orange hover:border-b `} */>Collections</a>
+						<a href="#" className="">
+							Men
+						</a>
+						<a href="#" className="">
+							Women
+						</a>
+						<a href="#" className="">
+							About
+						</a>
+						<a href="#" className="">
+							Contact
+						</a>
+					</div>
+				</div>
+				<a href="#">
+					<IconLogo />
+				</a>
+			</nav>
+			<div className="p-2 flex gap-x-2">
+				<button>
+					<IconCart />
+				</button>
+				<button className="h-6 w-6">
+					<img src="./images/image-avatar.png" alt="" />
+				</button>
+			</div>
+		</header>
+	)
+}
+{
+	/* <header className="flex justify-between items-center relative border-b border-lightGrayishBlue">
 			<nav className="flex items-center gap-x-4 ">
 				<button onClick={openMenu} className="ml-4 py-4 md:hidden">
 					<IconMenu />
@@ -34,6 +71,5 @@ export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => 
 					<img src="./images/image-avatar.png" alt="" />
 				</button>
 			</div>
-		</header>
-	)
+		</header> */
 }
