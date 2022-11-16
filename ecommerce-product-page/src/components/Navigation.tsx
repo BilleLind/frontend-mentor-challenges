@@ -2,14 +2,14 @@ import { IconCart, IconClose, IconLogo, IconMenu } from './SVG'
 
 export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => {
 	return (
-		<header className="flex justify-between items-center relative border-b border-lightGrayishBlue text-lg">
-			<nav className="flex items-center justify-center p-2 gap-x-2">
+		<header className="flex justify-between items-center relative z-30 border-b border-lightGrayishBlue text-lg">
+			<nav className="flex items-center justify-center p-4 gap-x-4">
 				<IconMenu onClick={openMenu} className=" md:hidden" />
-				<div className={`${open ? 'absolute top-0 left-0 w-full h-full bg-black/75' : 'hidden'}`}>
-					<div className="bg-white p-2 w-3/5 flex flex-col">
-					<button onClick={openMenu} /* className={`${open ? 'inline-flex p-4 border-red-400 ' : 'hidden'}`} */>
-								<IconClose />
-							</button>
+				<div className={`${open ? 'absolute top-0 left-0 w-full h-screen bg-black/75 z-30' : 'hidden'}`}>
+					<div className="bg-white p-4 w-3/5 h-screen flex flex-col">
+						<button onClick={openMenu} className="mb-4">
+							<IconClose />
+						</button>
 						<a href="#" /* className={`${open ? '' :'ml-4 '} text-darkGrayishBlue  hover:text-black p-4 hover:border-b-orange hover:border-b `} */>Collections</a>
 						<a href="#" className="">
 							Men
