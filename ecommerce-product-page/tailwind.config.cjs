@@ -12,12 +12,12 @@
 				black: 'hsl(0, 0% 0%)',
 			},
 			fontSize: {
-				'xs': 'clamp(0.83rem, calc(0.80rem + 0.16vw), 0.95rem)',
-				'base': 'clamp(1.00rem, calc(0.95rem + 0.25vw), 1.19rem)',
-				'lg': 'clamp(1.20rem, calc(1.12rem + 0.39vw), 1.48rem)',
-				'xl': 'clamp(1.44rem, calc(1.33rem + 0.56vw), 1.86rem)',
-				'2xl': 'clamp(1.73rem, calc(1.57rem + 0.80vw), 2.32rem)',
-				'3xl': 'clamp(2.07rem, calc(1.85rem + 1.12vw), 2.90rem)'
+				'xs': '14px',/* clamp(0.83rem, calc(0.80rem + 0.16vw), 0.95rem) */
+				'base': '16px', /* clamp(1.00rem, calc(0.95rem + 0.25vw), 1.19rem) */
+				'lg': '28px', /* clamp(1.20rem, calc(1.12rem + 0.39vw), 1.48rem) */
+				'xl': '32px', /* clamp(1.44rem, calc(1.33rem + 0.56vw), 1.86rem) */
+				'2xl': '40px', /* clamp(1.73rem, calc(1.57rem + 0.80vw), 2.32rem) */
+				/* '3xl': 'clamp(2.07rem, calc(1.85rem + 1.12vw), 2.90rem)' */
 			}
 		},
 	},
