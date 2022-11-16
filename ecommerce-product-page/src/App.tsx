@@ -20,7 +20,7 @@ function App() {
 		<>
 			<Navigation open={open} openMenu={openMenu} />
 			<Slider slides={slides} />
-			<section className="p-3 grid gap-3">
+			<section className="p-3 grid gap-4">
 				<h4 className="text-xs text-orange font-bold">SNEAKER COMBANY</h4>
 				<h1 className="text-lg font-bold leading-none">Fall Limited Edition Sneakers</h1>
 				<p className="text-xs text-veryDarkBlue">

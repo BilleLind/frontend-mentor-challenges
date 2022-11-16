@@ -7,20 +7,24 @@ export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => 
 				<IconMenu onClick={openMenu} className=" md:hidden" />
 				<div className={`${open ? 'absolute top-0 left-0 w-full h-screen bg-black/75 z-30' : 'hidden'}`}>
 					<div className="bg-white p-4 w-3/5 h-screen flex flex-col">
-						<button onClick={openMenu} className="mb-4">
-							<IconClose />
+						<button onClick={openMenu} className="mb-4 group outline-none">
+							<IconClose className="fill-veryDarkBlue transition duration-300 transform group-hover:rotate-90 group-hover:scale-105 group-hover:fill-orange group-focus:scale-105 group-focus:rotate-90 group-focus:fill-orange outline-none" />
 						</button>
-						<a href="#" /* className={`${open ? '' :'ml-4 '} text-darkGrayishBlue  hover:text-black p-4 hover:border-b-orange hover:border-b `} */>Collections</a>
-						<a href="#" className="">
+
+						<a href="#" className="nav-link">
+							Collections
+						</a>
+
+						<a href="#" className="nav-link">
 							Men
 						</a>
-						<a href="#" className="">
+						<a href="#" className="nav-link">
 							Women
 						</a>
-						<a href="#" className="">
+						<a href="#" className="nav-link">
 							About
 						</a>
-						<a href="#" className="">
+						<a href="#" className="nav-link">
 							Contact
 						</a>
 					</div>

@@ -26,3 +26,9 @@
     font-family: 'Kumbh Sans', sans-serif;
   }
 }
+
+@layer components {
+  .nav-link {
+    @apply transition duration-300 transform hover:scale-105 hover:border-b-orange focus:scale-105 focus:border-b-orange border-b-2 border-b-transparent outline-none;
+  }
+}
