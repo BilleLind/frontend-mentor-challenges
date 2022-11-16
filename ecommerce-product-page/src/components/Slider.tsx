@@ -25,8 +25,6 @@ export default ({ slides }: SlidesProp) => {
 		return null
 	}
 
-	console.log(current)
-
 	return (
 		<section className="w-full h-60 relative">
 			<button onClick={prevSlide} className={`absolute left-0 ml-1 inset-y-1/2 translate-t-1/2 z-20 bg-white rounded-full w-6 h-6 inline-flex items-center justify-center ${current ===0 ? 'hidden': ''}`}>
