@@ -31,4 +31,7 @@
   .nav-link {
     @apply transition duration-300 transform hover:scale-105 hover:border-b-orange focus:scale-105 focus:border-b-orange border-b-2 border-b-transparent outline-none;
   }
+  .btn-act {
+    @apply flex items-center p-3 bg-orange text-paleOrange text-base justify-center rounded-lg;
+  }
 }
