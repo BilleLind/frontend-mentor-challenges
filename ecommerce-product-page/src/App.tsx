@@ -4,10 +4,13 @@ import Slider from './components/Slider'
 import { IconCart, IconMinus, IconPlus } from './components/SVG'
 import { formatCurrency } from './utilities/FormatCurrency'
 import { getProduct, Product } from './utilities/fakeProductAPI'
+import { useCart } from './context/CartContext'
 
 function App() {
 	const [open, setOpen] = useState<boolean>(false)
 	const [product, setProduct] = useState<Product>()
+
+	const { getProductQuantity, decreaseCartQuantity, increaseCartQuantity } = useCart()
 
 	const openMenu = () => {
 		setOpen((prevOpen) => !prevOpen)
@@ -18,9 +21,12 @@ function App() {
 	}, [])
 
 	if (product == undefined) {
-		return <h1>Loading</h1>
+		return (
+			<main className="flex w-full h-full justify-center items-center">
+				<h1 className="animate-pulse ">Loading....</h1>
+			</main>
+		)
 	}
-
 
 	return (
 		<>
@@ -38,17 +44,16 @@ function App() {
 					<p className="text-darkGrayishBlue font-bold line-through">{product ? (product.discount ? null : formatCurrency(product.price)) : 'Loading'}</p>
 				</div>
 				<div className="flex items-center justify-between p-3 bg-lightGrayishBlue text-black rounded-lg">
-					<button className="outline-none group">
+					<button className="outline-none group" onClick={() => decreaseCartQuantity(0)}>
 						<IconMinus className="fill-orange" />
 					</button>
-					<span>0</span>
-					<button>
+					<span>{getProductQuantity(0)}</span>
+					<button onClick={() => increaseCartQuantity(0)}>
 						<IconPlus className="fill-orange" />
 					</button>
-					{/* context for session/memory/localstorage cart */}
 				</div>
-				<button className="btn-act">
-					<IconCart className="fill-paleOrange mr-2" /> <span className="font-bold">Add to cart</span>
+				<button className="btn-act" onClick={() => increaseCartQuantity(0)}>
+					<IconCart className="fill-paleOrange mr-2" /> <span className="font-bold">Add {getProductQuantity(0) >= 1 ? 'more' : ''} to cart</span>
 				</button>
 			</section>
 		</>

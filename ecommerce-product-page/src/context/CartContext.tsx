@@ -1,14 +1,14 @@
 import { createContext, FC, ReactNode, useContext, useState } from 'react'
 
 type CartContext = {
-	/* openCart: () => void
-	closeCart: () => void */
+	toggleCart: () => void
+	getCart: () => boolean
 	getProductQuantity: (id: number) => number
 	increaseCartQuantity: (id: number) => void
 	decreaseCartQuantity: (id: number) => void
 	removeProductFromCart: (id: number) => void
-	/* cartQuantity: number
-	CartProducts: CartProduct[] */
+	cartQuantity: () => number
+	cartProducts: CartProduct[]
 }
 
 interface Props {
@@ -27,14 +27,33 @@ export function useCart() {
 }
 
 export const CartProvider: FC<Props> = ({ children }) => {
-	const [cart, setCart] = useState<CartProduct[]>([])
+	const [cartProducts, setCartProducts] = useState<CartProduct[]>([])
+	const [showCart, setShowCart] = useState(false)
+
+	const toggleCart = () => {
+		setShowCart((prev) => !prev)
+	}
+	const getCart = () => {
+		return showCart
+	}
 
 	const getProductQuantity = (id: number) => {
-		return cart.find((item) => item.id === id)?.quantity || 0
+		return cartProducts.find((item) => item.id === id)?.quantity || 0
+	}
+	const cartQuantity = () => {
+		if (cartProducts.length == 0) return 0
+
+		var tempQuantity = 0
+		cartProducts.forEach((cartProduct) => {
+			if (cartProduct.quantity > 0) {
+				tempQuantity += cartProduct.quantity
+			}
+		})
+		return tempQuantity
 	}
 
 	const increaseCartQuantity = (id: number) => {
-		setCart((currentItems) => {
+		setCartProducts((currentItems) => {
 			if (currentItems.find((item) => item.id === id) == null) {
 				return [...currentItems, { id: id, quantity: 1 }]
 			} else {
@@ -50,7 +69,7 @@ export const CartProvider: FC<Props> = ({ children }) => {
 	}
 
 	const decreaseCartQuantity = (id: number) => {
-		setCart((currentItems) => {
+		setCartProducts((currentItems) => {
 			if (currentItems.find((item) => item.id === id)?.quantity === 1) {
 				return currentItems.filter((item) => item.id !== id)
 			} else {
@@ -66,10 +85,10 @@ export const CartProvider: FC<Props> = ({ children }) => {
 	}
 
 	const removeProductFromCart = (id: number) => {
-		setCart((currentItems) => {
+		setCartProducts((currentItems) => {
 			return currentItems.filter((item) => item.id !== id)
 		})
 	}
 
-	return <CartContext.Provider value={{ getProductQuantity, increaseCartQuantity, decreaseCartQuantity, removeProductFromCart }}>{children}</CartContext.Provider>
+	return <CartContext.Provider value={{ getProductQuantity, increaseCartQuantity, decreaseCartQuantity, removeProductFromCart, toggleCart, getCart, cartProducts, cartQuantity }}>{children}</CartContext.Provider>
 }
