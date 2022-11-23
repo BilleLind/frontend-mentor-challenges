@@ -10,9 +10,12 @@ export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => 
 				<button onClick={openMenu} className="outline-none group md:hidden" title="Navigation Menu">
 					<IconMenu className="fill-veryDarkBlue transition duration-300 transform group-hover:fill-orange group-hover:-rotate-12 group-focus:fill-orange group-focus:-rotate-12" />
 				</button>
-				<div className={`${open ? 'absolute top-0 left-0 w-full h-screen bg-black/75 z-30' : 'hidden'}`}>
-					<div className="bg-white p-4 w-3/5 h-screen flex flex-col">
-						<button onClick={openMenu} className="mb-4 group outline-none" title="Close Navigation Menu">
+				<a href="/" className="outline-none group" title="Home page">
+					<IconLogo className="text-current transition duration-300 group-hover:fill-orange" />
+				</a>
+				<div className={`${open ? 'absolute top-0 left-0 w-full h-screen bg-black/75 z-30' : 'hidden md:flex'}`}>
+					<div className="bg-white p-4 w-3/5 h-screen flex flex-col md:bg-none md:w-fit md:h-full md:flex-row md:leading-none text-darkGrayishBlue gap-x-4 md:text-base">
+						<button onClick={openMenu} className="mb-4 group outline-none md:hidden" title="Close Navigation Menu">
 							<IconClose className="fill-veryDarkBlue transition duration-300 transform group-hover:rotate-90 group-hover:scale-105 group-hover:fill-orange group-focus:scale-105 group-focus:rotate-90 group-focus:fill-orange outline-none" />
 						</button>
 
@@ -34,18 +37,15 @@ export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => 
 						</a>
 					</div>
 				</div>
-				<a href="/" className="outline-none group" title="Home page">
-					<IconLogo className="text-current transition duration-300 group-hover:fill-orange" />
-				</a>
 			</nav>
-			<div className="p-2 flex gap-x-2 relative">
+			<div className="p-4 flex gap-x-2 md:gap-x-4 relative">
 				<button onClick={toggleCart} className="group outline-none relative" title="Shopping Cart">
-					<IconCart className={`transition duration-300 transform group-hover:fill-orange  group-focus:fill-orange  ${getCart() ? '-rotate-12 fill-orange' : ''} `} />{' '}
+					<IconCart className={`transition duration-300 transform fill-veryDarkBlue group-hover:fill-orange  group-focus:fill-orange  ${getCart() ? '-rotate-12 fill-orange' : ''} `} />{' '}
 					{cartQuantity() != 0 ? (
 						<span className="absolute top-0 right-0 translate-x-2 -translate-y-1.5 text-[10px] text-white bg-orange rounded-3xl list-none py-0 px-2">{cartQuantity()}</span>
 					) : null}
 				</button>
-				<button className="h-6 w-6 outline-none group" title="Profile">
+				<button className="h-6 w-6 md:h-8 md:w-8 outline-none group" title="Profile">
 					<img
 						src="./images/image-avatar.png"
 						alt=""
