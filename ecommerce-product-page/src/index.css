@@ -22,16 +22,16 @@
 */
 
 @layer base {
-  html {
-    font-family: 'Kumbh Sans', sans-serif;
-  }
+	html {
+		font-family: 'Kumbh Sans', sans-serif;
+	}
 }
 
 @layer components {
-  .nav-link {
-    @apply transition duration-300 transform hover:scale-105 hover:border-b-orange focus:scale-105 focus:border-b-orange border-b-2 border-b-transparent outline-none;
-  }
-  .btn-act {
-    @apply flex items-center p-3 bg-orange text-paleOrange text-base justify-center rounded-lg;
-  }
+	.nav-link {
+		@apply transition duration-300 transform hover:scale-105 hover:border-b-orange focus:scale-105 focus:border-b-orange border-b-2 border-b-transparent outline-none;
+	}
+	.btn-act {
+		@apply flex items-center p-3 bg-orange text-paleOrange text-base justify-center rounded-lg transition duration-300 outline-none focus:outline-orange hover:opacity-80 focus:opacity-80;
+	}
 }

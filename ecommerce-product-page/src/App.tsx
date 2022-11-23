@@ -45,11 +45,11 @@ function App() {
 				</div>
 				<div className="flex items-center justify-between p-3 bg-lightGrayishBlue text-black rounded-lg">
 					<button className="outline-none group" onClick={() => decreaseCartQuantity(0)}>
-						<IconMinus className="fill-orange" />
+						<IconMinus className="fill-orange transition duration-300 transform group-hover:scale-125 group-focus:scale-125 group-focus:outline-orange group-hover:opacity-80 group-focus:opacity-80" />
 					</button>
 					<span>{getProductQuantity(0)}</span>
-					<button onClick={() => increaseCartQuantity(0)}>
-						<IconPlus className="fill-orange" />
+					<button className="outline-none group" onClick={() => increaseCartQuantity(0)}>
+						<IconPlus className="fill-orange transition duration-300 transform group-hover:scale-125 group-focus:scale-125 group-focus:outline-orange group-hover:opacity-80 group-focus:opacity-80" />
 					</button>
 				</div>
 				<button className="btn-act" onClick={() => increaseCartQuantity(0)}>

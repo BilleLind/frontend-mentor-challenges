@@ -11,7 +11,7 @@ export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => 
 					<IconMenu className="fill-veryDarkBlue transition duration-300 transform group-hover:fill-orange group-hover:-rotate-12 group-focus:fill-orange group-focus:-rotate-12" />
 				</button>
 				<a href="/" className="outline-none group" title="Home page">
-					<IconLogo className="text-current transition duration-300 group-hover:fill-orange" />
+					<IconLogo className="text-current transition duration-300 group-hover:fill-orange group-focus:fill-orange" />
 				</a>
 				<div className={`${open ? 'absolute top-0 left-0 w-full h-screen bg-black/75 z-30' : 'hidden md:flex'}`}>
 					<div className="bg-white p-4 w-3/5 h-screen flex flex-col md:bg-none md:w-fit md:h-full md:flex-row md:leading-none text-darkGrayishBlue gap-x-4 md:text-base">
