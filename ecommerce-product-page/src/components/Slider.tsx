@@ -25,20 +25,20 @@ export default ({ slides }: SlidesProp) => {
 	}
 
 	return (
-		<section className="w-full h-auto aspect-[4/4] relative">
+		<section className="w-full h-auto  relative">
 			{' '}
 			{/* h-80 */}
 			<button
 				onClick={prevSlide}
-				className={`absolute left-0 ml-1 inset-y-1/2 translate-t-1/2 z-20 bg-white rounded-full w-6 h-6 inline-flex items-center justify-center ${current === 0 ? 'hidden' : ''}`}>
+				className={`absolute left-0 ml-1 inset-y-1/2 translate-t-1/2 z-20 bg-white rounded-full w-6 h-6 inline-flex items-center justify-center md:hidden ${current === 0 ? 'hidden' : ''}`}>
 				<IconPrevious className="-ml-1" />
 			</button>
 			<button
 				onClick={nextSlide}
-				className={`absolute right-0 mr-1 top-1/2 translate-t-1/2 z-20 bg-white rounded-full w-6 h-6 inline-flex items-center justify-center ${current === length - 1 ? 'hidden' : ''}`}>
+				className={`absolute right-0 mr-1 top-1/2 translate-t-1/2 z-20 bg-white rounded-full w-6 h-6 inline-flex items-center justify-center md:hidden ${current === length - 1 ? 'hidden' : ''}`}>
 				<IconNext className="-mr-1" />
 			</button>
-			<div className="relative overflow-hidden w-full h-full">
+			<div className="relative overflow-hidden w-full h-full md:rounded-2xl ">
 				{slides.images.map((slide, index) => {
 					return (
 						<div
@@ -47,13 +47,24 @@ export default ({ slides }: SlidesProp) => {
 								index > current ? '-translate-x-full z-0' : index < current ? 'translate-x-full z-0' : 'translate-x-0 z-10'
 							}  `}>
 							{' '}
-							<img src={`/images/${slide}`} className={`transform transition duration-300 block w-full h-auto object-cover`}></img>
+							<img src={`/images/${slide}`} className={`transform transition duration-300 block w-full h-auto aspect-[4/4] object-cover`}></img>
 							{/* )} */}
 						</div>
 					)
 				})}
 			</div>
-			{/* Thumbnail */}
+			<div className="hidden md:flex gap-x-4 md:justify-around w-full absolute -bottom-20 right-0 left-0 h-16 z-20">
+				{slides.thumbnails.map((thumbnail, index) => {
+					return (
+						<img
+							src={`/images/${thumbnail}`}
+							key={index}
+					className={`object-cover h-auto rounded-lg transform transition duration-300 outline-none bg-orange hover:border-orange hover:border-2 hover:scale-110 focus:border-orange focus:border-2 focus:scale-110 ${current == index ? 'border-2 border-orange scale-110' : ''}`}
+							onClick={() => setCurrent(index)} tabIndex={0}
+						/>
+					)
+				})}
+			</div>
 		</section>
 	)
 }
