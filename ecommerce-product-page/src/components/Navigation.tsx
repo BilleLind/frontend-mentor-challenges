@@ -19,20 +19,20 @@ export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => 
 							<IconClose className="fill-veryDarkBlue transition duration-300 transform group-hover:rotate-90 group-hover:scale-105 group-hover:fill-orange group-focus:scale-105 group-focus:rotate-90 group-focus:fill-orange outline-none" />
 						</button>
 
-						<a href="#" className="nav-link">
+						<a href="#" className="nav-link" title="Go to Collection">
 							Collections
 						</a>
 
-						<a href="#" className="nav-link">
+						<a href="#" className="nav-link" title="Go to Men">
 							Men
 						</a>
-						<a href="#" className="nav-link">
+						<a href="#" className="nav-link" title="Go to Women">
 							Women
 						</a>
-						<a href="#" className="nav-link">
+						<a href="#" className="nav-link" title="Go to About">
 							About
 						</a>
-						<a href="#" className="nav-link">
+						<a href="#" className="nav-link" title="Go to Contact">
 							Contact
 						</a>
 					</div>

@@ -25,7 +25,7 @@ export default ({ slides }: SlidesProp) => {
 	}
 
 	return (
-		<section className="w-full h-auto  relative">
+		<section className="w-full h-auto  relative ">
 			{' '}
 			{/* h-80 */}
 			<button
@@ -38,29 +38,32 @@ export default ({ slides }: SlidesProp) => {
 				className={`absolute right-0 mr-1 top-1/2 translate-t-1/2 z-20 bg-white rounded-full w-6 h-6 inline-flex items-center justify-center md:hidden ${current === length - 1 ? 'hidden' : ''}`}>
 				<IconNext className="-mr-1" />
 			</button>
-			<div className="relative overflow-hidden w-full h-full md:rounded-2xl ">
+			<div className="relative overflow-hidden w-full h-full border-red-400 border-2">
 				{slides.images.map((slide, index) => {
 					return (
 						<div
 							key={index}
-							className={`transition-all duration-300 transform bg-lightGrayishBlue absolute inset-0 ${
+							className={`transition-all duration-300 transform bg-lightGrayishBlue absolute inset-0 w-full ${
 								index > current ? '-translate-x-full z-0' : index < current ? 'translate-x-full z-0' : 'translate-x-0 z-10'
 							}  `}>
 							{' '}
-							<img src={`/images/${slide}`} className={`transform transition duration-300 block w-full h-auto aspect-[4/4] object-cover`}></img>
+							<img src={`/images/${slide}`} className={`transform transition duration-300 block w-full  aspect-[4/4] object-cover md:rounded-2xl`}></img>
 							{/* )} */}
 						</div>
 					)
 				})}
 			</div>
-			<div className="hidden md:flex gap-x-4 md:justify-around w-full absolute -bottom-20 right-0 left-0 h-16 z-20">
+			<div className="hidden md:flex gap-x-4 md:justify-around w-full absolute top-[80%] bottom-0 right-0 left-0 z-20 ">
 				{slides.thumbnails.map((thumbnail, index) => {
 					return (
 						<img
 							src={`/images/${thumbnail}`}
 							key={index}
-					className={`object-cover h-auto rounded-lg transform transition duration-300 outline-none bg-orange hover:border-orange hover:border-2 hover:scale-110 focus:border-orange focus:border-2 focus:scale-110 ${current == index ? 'border-2 border-orange scale-110' : ''}`}
-							onClick={() => setCurrent(index)} tabIndex={0}
+							className={`object-cover my-auto w-1/5 aspect-[4/4] rounded-lg transform transition duration-300 outline-none bg-orange hover:border-orange hover:border-2 hover:scale-110 focus:border-orange focus:border-2 focus:scale-110 ${
+								current == index ? 'border-2 border-orange scale-110' : ''
+							}`}
+							onClick={() => setCurrent(index)}
+							tabIndex={0}
 						/>
 					)
 				})}
