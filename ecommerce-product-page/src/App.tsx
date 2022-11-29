@@ -31,7 +31,7 @@ function App() {
 	return (
 		<>
 			<Navigation open={open} openMenu={openMenu} />
-			<section className='md:flex md:w-11/12 md:mx-auto md:mt-6  h-screen'>
+			<section className='md:flex md:w-11/12 md:mx-auto md:mt-6  md:h-screen'>
 				<Slider slides={{ images: product.images, thumbnails: product.thumbnails }} />
 				<div className="p-3 grid gap-4 md:justify-center">
 					<h4 className="text-xs text-orange font-bold">{product?.creator}</h4>

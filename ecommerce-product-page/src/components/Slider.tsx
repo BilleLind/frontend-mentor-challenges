@@ -25,7 +25,7 @@ export default ({ slides }: SlidesProp) => {
 	}
 
 	return (
-		<section className="w-full h-auto  relative ">
+		<section className="w-full h-auto relative ">
 			{' '}
 			{/* h-80 */}
 			<button
@@ -38,22 +38,20 @@ export default ({ slides }: SlidesProp) => {
 				className={`absolute right-0 mr-1 top-1/2 translate-t-1/2 z-20 bg-white rounded-full w-6 h-6 inline-flex items-center justify-center md:hidden ${current === length - 1 ? 'hidden' : ''}`}>
 				<IconNext className="-mr-1" />
 			</button>
-			<div className="relative overflow-hidden w-full h-full border-red-400 border-2">
+			<div className="relative overflow-hidden w-full h-full">
+				<div className="transition-all duration-300 transform bg-lightGrayishBlue absolute w-full h-auto"></div>
 				{slides.images.map((slide, index) => {
 					return (
-						<div
+						<img
 							key={index}
-							className={`transition-all duration-300 transform bg-lightGrayishBlue absolute inset-0 w-full ${
+							src={`/images/${slide}`}
+							className={`absolute  transform transition duration-300 block w-full h-auto aspect-[4/4] object-cover md:rounded-2xl ${
 								index > current ? '-translate-x-full z-0' : index < current ? 'translate-x-full z-0' : 'translate-x-0 z-10'
-							}  `}>
-							{' '}
-							<img src={`/images/${slide}`} className={`transform transition duration-300 block w-full  aspect-[4/4] object-cover md:rounded-2xl`}></img>
-							{/* )} */}
-						</div>
+							}`}></img>
 					)
 				})}
 			</div>
-			<div className="hidden md:flex gap-x-4 md:justify-around w-full absolute top-[80%] bottom-0 right-0 left-0 z-20 ">
+			<div className="hidden md:flex md:flex-wrap gap-x-4 md:justify-around w-full  z-20 ">
 				{slides.thumbnails.map((thumbnail, index) => {
 					return (
 						<img
