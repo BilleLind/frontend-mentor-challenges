@@ -5,8 +5,8 @@ import { useCart } from '../context/CartContext'
 export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => {
 	const { getCart, toggleCart, getProductQuantity, cartQuantity } = useCart()
 	return (
-		<header className="flex justify-between items-center relative z-30 border-b border-lightGrayishBlue text-lg">
-			<nav className="flex items-center justify-center p-4 gap-x-4">
+		<header className={`flex justify-between items-center relative z-30 text-lg ${open ? 'border-lightGrayishBlue border-b': ''}`}>
+			<nav className="flex items-center justify-center p-4 md:p-6 lg:p-8 gap-x-4">
 				<button onClick={openMenu} className="outline-none group md:hidden" title="Navigation Menu">
 					<IconMenu className="fill-veryDarkBlue transition duration-300 transform group-hover:fill-orange group-hover:-rotate-12 group-focus:fill-orange group-focus:-rotate-12" />
 				</button>
@@ -14,7 +14,7 @@ export default ({ open, openMenu }: { open: boolean; openMenu: () => void }) => 
 					<IconLogo className="text-current transition duration-300 group-hover:fill-orange group-focus:fill-orange" />
 				</a>
 				<div className={`${open ? 'absolute top-0 left-0 w-full h-screen bg-black/75 z-30' : 'hidden md:flex'}`}>
-					<div className="bg-white p-4 w-3/5 h-screen flex flex-col md:bg-none md:w-fit md:h-full md:flex-row md:leading-none text-darkGrayishBlue gap-x-4 md:text-base">
+					<div className={`${open ? 'bg-white text-darkGrayishBlue' : ''} p-4 w-3/5 h-screen flex flex-col md:bg-none md:w-fit md:h-full md:flex-row md:leading-none  gap-x-4 md:text-base`}>
 						<button onClick={openMenu} className="mb-4 group outline-none md:hidden" title="Close Navigation Menu">
 							<IconClose className="fill-veryDarkBlue transition duration-300 transform group-hover:rotate-90 group-hover:scale-105 group-hover:fill-orange group-focus:scale-105 group-focus:rotate-90 group-focus:fill-orange outline-none" />
 						</button>

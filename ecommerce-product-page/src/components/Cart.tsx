@@ -7,7 +7,7 @@ export default () => {
 	const { cartProducts, removeProductFromCart } = useCart()
 
 	return (
-		<div className="absolute top-14 right-0 w-screen max-w-[340px] mx-2 bg-white rounded-lg text-base">
+		<div className="absolute top-14 right-0 w-screen max-w-[340px] mx-2 bg-white rounded-lg text-base shadow-2xl">
 			<h5 className="text-start font-bold border-b border-darkGrayishBlue p-4">Cart</h5>
 			<div className="flex flex-col items-center justify-between gap-4 p-4">
 				{cartProducts.length != 0 ? (
