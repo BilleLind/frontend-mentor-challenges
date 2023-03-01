@@ -6,3 +6,5 @@ The folders inside each contain their own solution and readme
 
 - [Advice Generator](https://billelind.github.io/frontend-mentor-challenges/advice-generator/) 
     - HTML | CSS | Javascript
+- [Ecommerce Product Page] (https://billelind.github.io/frontend-mentor-challenges/ecommerce-product-page/)
+  - React - Tailwindcss - Typescript
