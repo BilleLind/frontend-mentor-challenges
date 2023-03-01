@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+- Orange: hsl(26, 100%, 55%)
+- Pale orange: hsl(25, 100%, 94%)
+
+
+
+- Very dark blue: hsl(220, 13%, 13%)
+- Dark grayish blue: hsl(219, 9%, 45%)
+- Grayish blue: hsl(220, 14%, 75%)
+- Light grayish blue: hsl(223, 64%, 98%)
+- White: hsl(0, 0%, 100%)
+- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+ 
+- Font size (paragraph): 16px
+ Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700
+
+*/
+
+@layer base {
+	html {
+		font-family: 'Kumbh Sans', sans-serif;
+	}
+}
+
+@layer components {
+	.nav-link {
+		@apply transition duration-300 transform hover:scale-105 hover:border-b-orange focus:scale-105 focus:border-b-orange border-b-2 border-b-transparent outline-none;
+	}
+	.btn-act {
+		@apply flex items-center p-3 bg-orange text-paleOrange text-base justify-center rounded-lg transition duration-300 outline-none focus:outline-orange hover:opacity-80 focus:opacity-80;
+	}
+	.close-lightbox {
+		position: absolute;
+		right: 2%;
+		top: 1%;
+		
+	}
+}
