@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { IconNext, IconPrevious } from './SVG'
+import { IconNext, IconPrevious, IconClose } from './SVG'
 
 interface SlidesProp {
 	lightBox: {
@@ -74,7 +74,9 @@ export default ({ slides, lightBox }: SlidesProp) => {
 					</button>
 				</div>
 			</div>
-
+			<button className={`top-4 right-6 ${lightBox.check === true ? 'absolute' : 'hidden'}`} onClick={lightBox.handler}>
+				<IconClose className='fill-white hover:scale-125'/>
+			</button>
 			{/* Slides */}
 			{/* <div className="relative overflow-hidden w-full h-full">
 				<div className="transition-all duration-300 transform bg-lightGrayishBlue absolute w-full h-auto"></div>

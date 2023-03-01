@@ -34,4 +34,10 @@
 	.btn-act {
 		@apply flex items-center p-3 bg-orange text-paleOrange text-base justify-center rounded-lg transition duration-300 outline-none focus:outline-orange hover:opacity-80 focus:opacity-80;
 	}
+	.close-lightbox {
+		position: absolute;
+		right: 2%;
+		top: 1%;
+		
+	}
 }
