@@ -41,3 +41,16 @@
 		
 	}
 }
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	position: absolute;
+	bottom: 10%;
+	width: max-content;
+	left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
+}
+.attribution a {
+	color: hsl(173, 87%, 40%);
+}
