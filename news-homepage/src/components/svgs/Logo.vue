@@ -11,4 +11,5 @@
 </script>
 
 <style scoped>
+svg {cursor: default;}
 </style>

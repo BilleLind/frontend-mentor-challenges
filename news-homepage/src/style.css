@@ -27,10 +27,15 @@ p {
 }
 
 a:hover {
-  color: var(--soft-orange)
+	transition: all 0.4s ease-in-out;
+	color: var(--soft-orange);
 }
 
-
+svg:hover {
+	transition: all 0.4s ease-in-out;
+	fill: var(--soft-orange);
+	cursor: pointer;
+}
 
 /* Utilties */
 .hidden {
