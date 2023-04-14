@@ -1,9 +1,38 @@
 @font-face {
-  font-family: "Inter Variable";
-  src: local('Inter Variable'),url("/fonts/Inter-VariableFont.ttf");
+	font-family: 'Inter Variable';
+	src: local('Inter Variable'), url('/fonts/Inter-VariableFont.ttf');
+}
+
+/* Reset */
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+:root {
+	--soft-orange: hsl(35, 77%, 62%);
+	--soft-red: hsl(5, 85%, 63%);
+	--off-white: hsl(36, 100%, 99%);
+	--greyish-blue: hsl(233, 8%, 79%);
+	--dark-greyish-blue: hsl(236, 13%, 42%);
+	--very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body {
+	font-family: 'Inter Variable';
+}
+
+p {
+	font-size: 15px;
+}
+
+a:hover {
+  color: var(--soft-orange)
 }
 
 
-body {
-  font-family: 'Inter Variable';
+
+/* Utilties */
+.hidden {
+	display: none;
 }
