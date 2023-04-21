@@ -1,0 +1,105 @@
+@font-face {
+	font-family: 'Inter Variable';
+	src: local('Inter Variable'), url('/fonts/Inter-VariableFont.ttf');
+}
+
+/* Reset */
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
+html,
+body {
+	height: 100%;
+}
+
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	border: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+ol, ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#root,
+#__next {
+	isolation: isolate;
+}
+
+
+:root {
+	--soft-orange: hsl(35, 77%, 62%);
+	--soft-red: hsl(5, 85%, 63%);
+	--off-white: hsl(36, 100%, 99%);
+	--greyish-blue: hsl(233, 8%, 79%);
+	--dark-greyish-blue: hsl(236, 13%, 42%);
+	--very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body {
+	font-family: 'Inter Variable';
+}
+
+p {
+	font-size: 15px;
+	
+	line-height: 1.6rem;
+}
+h1 {
+	font-weight: bolder;
+	font-size:2.75rem;
+	line-height: 2.75rem;
+}
+
+a:hover {
+	transition: all 0.4s ease-in-out;
+	color: var(--soft-orange);
+}
+
+svg:hover {
+	transition: all 0.4s ease-in-out;
+	fill: var(--soft-orange);
+	cursor: pointer;
+}
+
+/* Utilties */
+.hidden {
+	display: none;
+}
