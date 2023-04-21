@@ -5,20 +5,21 @@ import Navigation from './components/Navigation.vue'
 <template>
   <Navigation />
   <main>
-    <!-- Image -->
-    <picture>
-      <source srcset="assets/image-web-3-desktop.jpg" media="(min-width:740px)">
-      <img src="assets/image-web-3-mobile.jpg" alt="">
-    </picture>
-
     <!-- Heading, Text and Button -->
     <section class="headings">
-      <h1>The Bright Future of Web 3.0?</h1>
-      <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of
-        the people. But is it really fulfilling its promise?</p>
-      <button>
-        READ MORE
-      </button>
+      <picture>
+        <source srcset="assets/image-web-3-desktop.jpg" media="(min-width:740px)">
+        <img src="assets/image-web-3-mobile.jpg" alt="">
+      </picture>
+      <div>
+        <h1>The Bright Future of Web 3.0?</h1>
+
+        <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of
+          the people. But is it really fulfilling its promise?</p>
+        <button>
+          READ MORE
+        </button>
+      </div>
     </section>
 
     <!-- News Sections -->
@@ -46,30 +47,33 @@ import Navigation from './components/Navigation.vue'
 
 
     <!-- Suggestions -->
-  <section class="suggestions">
-    <article>
-      <img src="" alt="">
-      <div>
-        <h3></h3>
-        <a href=""></a>
-        <p></p>
-      </div>
-    </article>
-  </section>
-  <!-- 
-01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
+    <section class="suggestions">
+      <article>
+        <img src="assets/image-retro-pcs.jpg" alt="Retro PCs">
+        <div>
+          <h3>01</h3>
+          <a href="">Reviving Retro PCs</a>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </div>
+      </article>
+      <article>
+        <img src="assets/image-top-laptops.jpg" alt="Keyboard pecs">
+        <div>
+          <h3>02</h3>
+          <a href="">Top 10 Laptops of 2022</a>
+          <p>Our best picks for various needs and budgets.</p>
+        </div>
+      </article>
+      <article>
+        <img src="assets/image-gaming-growth.jpg" alt="Levitating Controller">
+        <div>
+          <h3>03</h3>
+          <a href="">The Growth of Gaming</a>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </article>
+    </section>
 
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-    03
-      The Growth of Gaming
-      How the pandemic has sparked fresh opportunities.
-
-       -->
   </main>
 </template>
 
@@ -78,18 +82,27 @@ main {
   gap: 1rem 0rem;
   display: grid;
   margin-inline: 1rem;
-  margin-top: 1rem;
 }
 
 img {
   width: 100%;
 }
 
-.headings>p {
+.headings>div>p {
   color: var(--dark-greyish-blue);
 }
 
-section>* {
+.headings>div {
+  display: grid;
+  /* grid-row: span 2/ span 2; */
+  gap: 1rem 0rem;
+}
+
+.headings>div>button {
+  width: fit-content;
+}
+
+section>*:not(:first-child) {
   margin: 1rem 0rem;
 }
 
@@ -97,6 +110,23 @@ h2 {
   font-size: xx-large;
   font-weight: bold;
   color: var(--soft-orange);
+}
+
+button {
+  background-color: var(--soft-red);
+  color: var(--off-white);
+  padding: 0.75rem 1.5rem;
+  margin: 1rem 0rem;
+  letter-spacing: 0.3rem;
+  font-weight: bolder;
+}
+
+button:hover {
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 400ms;
+  background-color: var(--very-dark-blue);
+  cursor: pointer;
 }
 
 .news {
@@ -125,20 +155,80 @@ h2 {
   padding-bottom: 1rem;
 }
 
-button {
-  background-color: var(--soft-red);
-  color: var(--off-white);
-  padding: 0.75rem 1.5rem;
-  margin: 1rem 0rem;
-  letter-spacing: 0.3rem;
-  font-weight: bolder;
+
+.suggestions {
+  display: flex;
 }
 
-button:hover {
-  transition: all;
-  transition-timing-function: ease-in-out;
-  transition-duration: 400ms;
-  background-color: var(--very-dark-blue);
-  cursor: pointer;
+.suggestions>article {
+  display: flex;
+  gap: 1rem;
+}
+
+.suggestions>article>img {
+  aspect-ratio: 3/4;
+  max-width: 30%;
+}
+
+.suggestions>article>div>h3 {
+  color: var(--greyish-blue);
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.suggestions>article>div>a {
+  font-weight: bold;
+  font-size: large;
+  color: var(--very-dark-blue);
+}
+
+.suggestions>article>div>a:hover {
+  color: var(--soft-orange);
+}
+
+.suggestions>article>div>p {
+  margin-top: 0.5rem;
+  color: var(--dark-greyish-blue)
+}
+
+@media (700px > width) {
+  .suggestions {
+    flex-direction: column;
+  }
+}
+
+@media (700px <=width) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0rem 1rem;
+  }
+
+  .headings {
+    grid-column: span 2 / span 2;
+  }
+
+  .headings>div {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: column;
+  }
+
+  .headings>div>h1 {
+    grid-row: span 2 / span 2;
+  }
+
+  .headings>div>button {
+    height: min-content;
+  }
+
+  .suggestions {
+    grid-column: span 3 / span 3;
+    margin: 1rem 0rem;
+  }
+
+  .suggestions>article>img {
+    object-fit: cover;
+    max-height: 11rem;
+  }
 }
 </style>
