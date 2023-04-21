@@ -8,8 +8,8 @@ import Navigation from './components/Navigation.vue'
     <!-- Heading, Text and Button -->
     <section class="headings">
       <picture>
-        <source srcset="assets/image-web-3-desktop.jpg" media="(min-width:740px)">
-        <img src="assets/image-web-3-mobile.jpg" alt="">
+        <source srcset="/assets/image-web-3-desktop.jpg" media="(min-width:740px)">
+        <img src="/assets/image-web-3-mobile.jpg" alt="">
       </picture>
       <div>
         <h1>The Bright Future of Web 3.0?</h1>
@@ -49,7 +49,7 @@ import Navigation from './components/Navigation.vue'
     <!-- Suggestions -->
     <section class="suggestions">
       <article>
-        <img src="assets/image-retro-pcs.jpg" alt="Retro PCs">
+        <img src="/assets/image-retro-pcs.jpg" alt="Retro PCs">
         <div>
           <h3>01</h3>
           <a href="">Reviving Retro PCs</a>
@@ -57,7 +57,7 @@ import Navigation from './components/Navigation.vue'
         </div>
       </article>
       <article>
-        <img src="assets/image-top-laptops.jpg" alt="Keyboard pecs">
+        <img src="/assets/image-top-laptops.jpg" alt="Keyboard pecs">
         <div>
           <h3>02</h3>
           <a href="">Top 10 Laptops of 2022</a>
@@ -65,7 +65,7 @@ import Navigation from './components/Navigation.vue'
         </div>
       </article>
       <article>
-        <img src="assets/image-gaming-growth.jpg" alt="Levitating Controller">
+        <img src="/assets/image-gaming-growth.jpg" alt="Levitating Controller">
         <div>
           <h3>03</h3>
           <a href="">The Growth of Gaming</a>
